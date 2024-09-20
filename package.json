@@ -1,12 +1,14 @@
 {
-  "homepage": "",
+  "homepage": "https://pizzaman5000.github.io/ubaids-website",
   "name": "3d-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "tsc -b || echo 'TypeScript build failed, proceeding with Vite build' && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

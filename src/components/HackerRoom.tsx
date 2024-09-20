@@ -5,6 +5,7 @@ Files: hacker-room-new.glb [34.62MB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc
 */
 
 import { useGLTF, useTexture } from '@react-three/drei';
+import { Mesh } from 'three';
 
 const HackerRoom = (props) => {
   const { nodes, materials } = useGLTF('/models/hacker-room.glb');
@@ -14,7 +15,7 @@ const HackerRoom = (props) => {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.screen_screens_0.geometry} material={materials.screens}>
+      <mesh geometry={(nodes.screen_screens_0 as Mesh).geometry} material={materials.screens}>
         <meshMatcapMaterial map={screenTxt} />
       </mesh>
       <mesh geometry={nodes.screen_glass_glass_0.geometry} material={materials.glass} />

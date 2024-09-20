@@ -38,8 +38,8 @@ const Cube = ({ ...props }) => {
           ref={cubeRef}
           castShadow
           receiveShadow
-          geometry={nodes.Cube.geometry}
-          material={nodes.Cube.material}
+          geometry={(nodes.Cube as Mesh).geometry}
+          material={(nodes.Cube as Mesh).material}
           onPointerEnter={() => setHovered(true)}>
           <meshMatcapMaterial matcap={texture} toneMapped={false} />
         </mesh>
